@@ -1,0 +1,98 @@
+/* sitemap.css */
+
+.sitemap-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.sitemap-breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.sitemap-breadcrumb a {
+  color: #1a6ea8;
+  text-decoration: none;
+}
+
+.sitemap-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.sitemap-title {
+  font-size: 1.8rem;
+  color: #1a2c4e;
+  margin-bottom: 36px;
+  font-weight: bold;
+}
+
+.sitemap-category {
+  margin-bottom: 40px;
+}
+
+.sitemap-cat-heading {
+  font-size: 1.1rem;
+  color: #1a6ea8;
+  font-weight: bold;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #d8e4f0;
+  padding-bottom: 8px;
+}
+
+.sitemap-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 32px;
+}
+
+/* ✅ Hover via pure CSS — no JS event handlers needed */
+.sitemap-link {
+  color: #1a6ea8;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.sitemap-link:hover {
+  text-decoration: underline;
+}
+
+.sitemap-hr {
+  border-color: #d0d8e8;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.sitemap-footer {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sitemap-footer a {
+  color: #1a3c6e;
+  text-decoration: none;
+}
+
+.sitemap-footer a:hover {
+  text-decoration: underline;
+}
+
+.sitemap-footer span {
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .sitemap-links-grid {
+    grid-template-columns: 1fr;
+  }
+}

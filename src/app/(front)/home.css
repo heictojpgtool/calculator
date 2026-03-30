@@ -1,0 +1,209 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #333;
+}
+
+/* ===== HERO ===== */
+.calc-wrapper {
+  background: #c5d5e5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 35px 20px 45px;
+}
+
+/* ===== CALC BOX — white card with border ===== */
+.calc-box {
+  background: #fff;
+  border: 1px solid #c0c8d8;
+  width: 470px;
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+.display {
+  background: #1e3f6e;
+  color: #fff;
+  text-align: right;
+  padding: 10px 14px;
+  font-size: 22px;
+  min-height: 46px;
+  margin-bottom: 0;
+}
+
+/* ===== GRID — 10 cols ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  border-left: 1px solid #c0c8d8;
+  border-top: 1px solid #c0c8d8;
+}
+
+.grid button,
+.grid .deg-rad-cell {
+  border-right: 1px solid #c0c8d8;
+  border-bottom: 1px solid #c0c8d8;
+  background: #e8eef5;
+  color: #222;
+  font-size: 11.5px;
+  font-family: Arial, sans-serif;
+  padding: 7px 1px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid button:hover { background: #cdd8e8; }
+
+/* Number buttons — steely blue like calculator.net */
+.grid button.num {
+  background: #8baac4;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+.grid button.num:hover { background: #7a9ab4; }
+
+/* = button — dark navy */
+.grid button.eq {
+  background: #1e3f6e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.grid button.eq:hover { background: #2a5080; }
+
+/* Blue utility buttons — same shade as numbers */
+.grid button.blue {
+  background: #8baac4;
+  color: #fff;
+}
+.grid button.blue:hover { background: #7a9ab4; }
+
+/* ===== DEG/RAD — horizontal like calculator.net ===== */
+.deg-rad-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-right: 1px solid #c0c8d8;
+  border-bottom: 1px solid #c0c8d8;
+  background: #e8eef5;
+  font-size: 11px;
+  padding: 4px 3px;
+}
+
+.mode-active   { color: #222; cursor: pointer; display: flex; align-items: center; gap: 2px; }
+.mode-inactive { color: #666; cursor: pointer; display: flex; align-items: center; gap: 2px; }
+.radio-dot     { font-size: 10px; }
+
+/* ===== RIGHT SEARCH ===== */
+.right { padding-top: 6px; min-width: 240px; }
+
+.right h1 {
+  font-size: 22px;
+  color: #1e3f6e;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.search { display: flex; }
+.search input {
+  border: 1px solid #aaa;
+  border-right: none;
+  padding: 7px 10px;
+  font-size: 13px;
+  width: 175px;
+  outline: none;
+}
+.search button {
+  background: #1e3f6e;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.search button:hover { background: #2a5080; }
+
+/* ===== CATEGORIES ===== */
+.categories {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 35px 20px 50px;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 20px;
+  margin-bottom: 30px;
+}
+
+.lists > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.circle-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.lists h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.lists a {
+  display: block;
+  color: #1565c0;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.lists a:hover { text-decoration: underline; }
+
+.all-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.all-btn-wrap button {
+  background: #4a7c3f;
+  color: #fff;
+  border: none;
+  padding: 11px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 2px;
+}
+.all-btn-wrap button:hover { background: #3a6a2f; }
+.arrow { font-size: 12px; }
