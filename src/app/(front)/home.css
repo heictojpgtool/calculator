@@ -15,13 +15,15 @@ body {
   align-items: flex-start;
   gap: 50px;
   padding: 35px 20px 45px;
+  flex-wrap: wrap;
 }
 
-/* ===== CALC BOX — white card with border ===== */
+/* ===== CALC BOX ===== */
 .calc-box {
   background: #fff;
   border: 1px solid #c0c8d8;
-  width: 470px;
+  width: 100%;
+  max-width: 470px;
   flex-shrink: 0;
   padding: 10px;
 }
@@ -34,6 +36,9 @@ body {
   font-size: 22px;
   min-height: 46px;
   margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ===== GRID — 10 cols ===== */
@@ -63,8 +68,8 @@ body {
 }
 
 .grid button:hover { background: #cdd8e8; }
+.grid button:active { opacity: 0.75; }
 
-/* Number buttons — steely blue like calculator.net */
 .grid button.num {
   background: #8baac4;
   color: #fff;
@@ -73,7 +78,6 @@ body {
 }
 .grid button.num:hover { background: #7a9ab4; }
 
-/* = button — dark navy */
 .grid button.eq {
   background: #1e3f6e;
   color: #fff;
@@ -82,25 +86,24 @@ body {
 }
 .grid button.eq:hover { background: #2a5080; }
 
-/* Blue utility buttons — same shade as numbers */
 .grid button.blue {
   background: #8baac4;
   color: #fff;
 }
 .grid button.blue:hover { background: #7a9ab4; }
 
-/* ===== DEG/RAD — horizontal like calculator.net ===== */
+/* ===== DEG/RAD ===== */
 .deg-rad-cell {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   border-right: 1px solid #c0c8d8;
   border-bottom: 1px solid #c0c8d8;
   background: #e8eef5;
-  font-size: 11px;
-  padding: 4px 3px;
+  font-size: 10px;
+  padding: 4px 2px;
 }
 
 .mode-active   { color: #222; cursor: pointer; display: flex; align-items: center; gap: 2px; }
@@ -108,7 +111,12 @@ body {
 .radio-dot     { font-size: 10px; }
 
 /* ===== RIGHT SEARCH ===== */
-.right { padding-top: 6px; min-width: 240px; }
+.right {
+  padding-top: 6px;
+  min-width: 220px;
+  width: 100%;
+  max-width: 470px;
+}
 
 .right h1 {
   font-size: 22px;
@@ -117,13 +125,14 @@ body {
   margin-bottom: 18px;
 }
 
-.search { display: flex; }
+.search { display: flex; position: relative; }
 .search input {
   border: 1px solid #aaa;
   border-right: none;
   padding: 7px 10px;
   font-size: 13px;
-  width: 175px;
+  flex: 1;
+  min-width: 0;
   outline: none;
 }
 .search button {
@@ -133,6 +142,7 @@ body {
   padding: 7px 16px;
   font-size: 13px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .search button:hover { background: #2a5080; }
 
@@ -207,3 +217,103 @@ body {
 }
 .all-btn-wrap button:hover { background: #3a6a2f; }
 .arrow { font-size: 12px; }
+
+
+/* ============================================================
+   TABLET — 768px se neeche
+   ============================================================ */
+@media (max-width: 768px) {
+  .calc-wrapper {
+    gap: 24px;
+    padding: 20px 12px 30px;
+  }
+
+  .calc-box {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .display {
+    font-size: 18px;
+    min-height: 40px;
+    padding: 8px 10px;
+  }
+
+  .grid button,
+  .grid .deg-rad-cell {
+    font-size: 10px;
+    min-height: 30px;
+    padding: 4px 1px;
+  }
+
+  .grid button.num  { font-size: 12px; }
+  .grid button.eq   { font-size: 13px; }
+
+  .deg-rad-cell { font-size: 9px; gap: 2px; }
+
+  .right { max-width: 100%; }
+  .right h1 { font-size: 18px; margin-bottom: 12px; }
+
+  .lists {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+
+  .circle-img { width: 110px; height: 110px; }
+}
+
+
+/* ============================================================
+   MOBILE — 480px se neeche
+   ============================================================ */
+@media (max-width: 480px) {
+  .calc-wrapper {
+    gap: 16px;
+    padding: 14px 8px 20px;
+  }
+
+  .calc-box {
+    padding: 6px;
+  }
+
+  .display {
+    font-size: 16px;
+    min-height: 36px;
+    padding: 6px 8px;
+  }
+
+  /* Calculator buttons — finger-friendly size */
+  .grid button,
+  .grid .deg-rad-cell {
+    font-size: 9px;
+    min-height: 28px;
+    padding: 3px 0;
+  }
+
+  .grid button.num  { font-size: 11px; }
+  .grid button.eq   { font-size: 12px; }
+
+  .deg-rad-cell { font-size: 8px; gap: 1px; padding: 2px 1px; }
+  .radio-dot    { font-size: 8px; }
+
+  .right h1 { font-size: 16px; }
+
+  .search input  { font-size: 13px; padding: 8px 10px; }
+  .search button { padding: 8px 12px; font-size: 13px; }
+
+  /* Categories — single column on very small screens */
+  .lists {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+  }
+
+  .circle-img { width: 80px; height: 80px; margin-bottom: 10px; }
+
+  .lists h3  { font-size: 13px; }
+  .lists a   { font-size: 12px; line-height: 1.8; }
+
+  .all-btn-wrap button {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+}

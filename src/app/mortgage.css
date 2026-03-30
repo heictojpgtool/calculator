@@ -31,6 +31,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 0;
+  flex-wrap: wrap;
 }
 .mc-arrow { font-size: 16px; }
 
@@ -156,6 +157,12 @@
 }
 .mc-monthly-pay strong { font-size: 20px; }
 
+.mc-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
 .mc-table {
   width: 100%;
   border-collapse: collapse;
@@ -253,3 +260,118 @@
   flex: 1;
 }
 .mc-sidebar-links a:hover { text-decoration: underline; }
+
+
+/* ============================================================
+   TABLET — 900px
+   ============================================================ */
+@media (max-width: 900px) {
+  .mc-layout {
+    flex-direction: column;
+  }
+
+  .mc-sidebar {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .mc-search { width: 100%; }
+  .mc-sidebar-box { flex: 1; min-width: 200px; }
+}
+
+
+/* ============================================================
+   MOBILE — 600px
+   ============================================================ */
+@media (max-width: 600px) {
+
+  .mc-page {
+    padding: 8px 12px 30px;
+  }
+
+  .mc-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .mc-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Form aur Results — upar neeche */
+  .mc-body {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .mc-form  { min-width: 0; width: 100%; }
+  .mc-results { min-width: 0; width: 100%; }
+
+  /* Label upar, input neeche */
+  .mc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .mc-row label {
+    min-width: unset;
+    text-align: left;
+    font-weight: bold;
+    color: #1e3f6e;
+  }
+
+  .mc-input-wrap { width: 100%; }
+  .mc-input-wrap input { width: 100%; }
+  .mc-input-wrap select { width: 100%; }
+
+  .mc-btns {
+    padding-left: 0;
+    margin-top: 12px;
+  }
+
+  .mc-calc-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 15px;
+  }
+
+  .mc-clear-btn {
+    padding: 11px 16px;
+    font-size: 15px;
+  }
+
+  .mc-monthly-pay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .mc-monthly-pay strong { font-size: 22px; }
+
+  .mc-table { min-width: 320px; }
+
+  /* Pie chart stack */
+  .mc-chart-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Sidebar full width */
+  .mc-sidebar {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .mc-sidebar-box { width: 100%; }
+  .mc-infobar { font-size: 12px; }
+}
